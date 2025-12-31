@@ -1,0 +1,165 @@
+.browse {
+  padding-top: calc(var(--header-height) + 2rem);
+  min-height: 100vh;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4%;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chips {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: transparent;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-color);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chip__icon {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  stroke-width: 2.5;
+}
+
+.chip:hover .chip__icon,
+.chip.active .chip__icon {
+  transform: scale(1.2);
+}
+
+.chip:hover,
+.chip.active {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+  box-shadow: var(--glow-primary);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 4%;
+  margin-bottom: 2rem;
+}
+
+.load-more-trigger {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-more {
+  padding: 2rem 0;
+}
+
+.btn--load-more {
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--glow-primary);
+  font-weight: 600;
+  min-width: 200px;
+}
+
+.btn--load-more:hover:not(:disabled) {
+  filter: brightness(1.1);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn--load-more:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn--load-more .spinner {
+  width: 24px;
+  height: 24px;
+  border-width: 3px;
+}
+
+@media (max-width: 768px) {
+  .browse {
+    padding-top: calc(56px + 1.5rem);
+  }
+  
+  .toolbar {
+    padding: 0 3%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .chips {
+    gap: 0.75rem;
+  }
+  
+  .chip {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+  }
+  
+  .pagination {
+    padding: 2rem 3%;
+  }
+  
+  .btn--load-more {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .browse {
+    padding-top: calc(56px + 1rem);
+  }
+  
+  .toolbar {
+    padding: 0 2%;
+    margin-bottom: 1rem;
+  }
+  
+  .chips {
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .chip {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .pagination {
+    padding: 1.5rem 2%;
+  }
+  
+  .btn--load-more {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+    min-width: 160px;
+  }
+}
